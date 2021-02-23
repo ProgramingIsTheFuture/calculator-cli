@@ -1,16 +1,18 @@
 package args
 
-type SumInt struct {
+type Ints struct {
 	Num1 int32 `default:"0"`
 	Num2 int32 `default:"0"`
 }
 
-type SumFloat struct {
+type Floats struct {
 	Num1 float32 `default:"0"`
 	Num2 float32 `default:"0"`
 }
 
 type Args struct {
-	SumInt   *SumInt   `arg:"subcommand:intsum"`
-	SumFloat *SumFloat `arg:"subcommand:floatsum"`
+	SumInt   *Ints   `arg:"subcommand:intsum"`
+	SubInt   *Ints   `arg:"subcommand:intsub"`
+	SumFloat *Floats `arg:"subcommand:floatsum"`
+	SubFloat *Floats `arg:"subcommand:floatsub"`
 }

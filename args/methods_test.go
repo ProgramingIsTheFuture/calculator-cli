@@ -27,6 +27,16 @@ func TestSumIntNums(t *testing.T) {
 	require.Equal(t, int32(4), result)
 }
 
+func TestSubIntNums(t *testing.T) {
+	os.Args = strings.Split("./main intsub --num1 2 --num2 2", " ")
+
+	args := CreateArgs()
+
+	result := args.SubIntNums()
+
+	require.Equal(t, int32(0), result)
+}
+
 func TestSumFloatNums(t *testing.T) {
 	os.Args = strings.Split("./main floatsum --num1 2.5 --num2 2.5", " ")
 
@@ -35,4 +45,14 @@ func TestSumFloatNums(t *testing.T) {
 	result := args.SumFloatNums()
 
 	require.Equal(t, float32(5), result)
+}
+
+func TestSubFloatNums(t *testing.T) {
+	os.Args = strings.Split("./main floatsub --num1 2.5 --num2 2.5", " ")
+
+	args := CreateArgs()
+
+	result := args.SubFloatNums()
+
+	require.Equal(t, float32(0), result)
 }

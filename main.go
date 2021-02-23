@@ -13,7 +13,12 @@ func main() {
 	switch {
 	case args.SumInt != nil:
 		loggers.LogResult(args.SumIntNums())
+	case args.SubInt != nil:
+		loggers.LogResult(args.SubIntNums())
+
 	case args.SumFloat != nil:
 		loggers.LogResult(args.SumFloatNums())
+	case args.SubFloat != nil:
+		loggers.LogResult(args.SubFloatNums())
 	}
 }
